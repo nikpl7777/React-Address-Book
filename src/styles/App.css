@@ -1,0 +1,141 @@
+.b-page {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.b-form {
+    padding: 10px 0;
+}
+
+.b-form__field {
+    margin-bottom: 10px;
+}
+
+.b-control {
+    border: 1px solid #f1f1f1;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.b-form__error-message {
+    display: none;
+    color: #ff4c4c;
+}
+
+.b-form__field_has-error .b-form__error-message {
+    display: block;
+}
+
+.b-form__field_has-error .b-control {
+    border-color: #ff4c4c;
+}
+
+.b-button {
+    padding: 15px 12px;
+    border: 1px solid #f1f1f1;
+    background: #f1f1f1;
+    cursor: pointer;
+}
+
+.b-button ~ .b-button {
+    margin: 0 10px;
+}
+
+.b-button_remove {
+    background: #ff4c4c;
+    color: white;
+}
+
+.b-page__header {
+    margin: 0 0 15px;
+}
+
+.b-page__title {
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.b-page__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.b-page__title a:hover {
+    color: #4e4a4a;
+}
+
+.b-list {
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.b-list__item {
+    display: block;
+    padding: 15px;
+}
+
+.b-list__item:nth-child(2n) {
+    background: #f1f1f1;
+}
+
+.b-list__item:first-child {
+    border-top: 2px solid #f1f1f1;
+}
+
+.b-list__item:last-child {
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.b-list__item_add {
+    padding: 0;
+}
+
+.b-list__add {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    padding-top: 6px;
+}
+
+.b-list__remove {
+    float: right;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #ff4c4c;
+    font-weight: bold;
+    font-size: 2em;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.b-list__name {
+    margin: 0 0 15px;
+    font-size: 1.2em;
+}
+
+.b-list__name a {
+    color: inherit;
+    text-decoration: none;  
+    border-bottom: 1px dashed #4e4a4a;
+}
+
+.b-filter {
+    margin-top: 10px;
+}
+
+.b-filter__control {
+    border: 1px solid #f1f1f1;
+    font-size: 1.1em;
+    padding: 10px 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
