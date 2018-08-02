@@ -1,5 +1,5 @@
 /**
- * Global reducer
+ * Root reducer
  */
 
 import { combineReducers } from 'redux';

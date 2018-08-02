@@ -14,15 +14,15 @@ export default class List extends Component {
 
             <ul className="b-list">
                 { this.props.list.map(item=> 
-                    <li key={item.id} className="b-list__item">
+                    <li key={item.key} className="b-list__item">
                         <button
                             className="b-list__remove"
-                            onClick={()=> this.props.onRemove(item.id)}>
+                            onClick={()=> this.props.onRemove(item.key)}>
                             ✗
                         </button>
 
                         <h3 className="b-list__name">
-                            <Link to={'contacts/' + item.id} title="Click to edit">{item.name}</Link>
+                            <Link to={'contacts/' + item.key} title="Click to edit">{item.name}</Link>
                         </h3>
                         <span className="b-list__email">{item.email}</span>
                     </li>
@@ -38,7 +38,7 @@ export default class List extends Component {
 
 List.propTypes = {
     list: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        key: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         email: PropTypes.string.isRequired,
     })).isRequired,

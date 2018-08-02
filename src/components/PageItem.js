@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Page from './Page';
 
+import { Link } from 'react-router-dom';
+
 import { name as nameValidator, email as emailValidator } from '../helpers/validator';
 
 export default class Item extends Component {
@@ -42,7 +44,7 @@ export default class Item extends Component {
     }
 
     isValid() {
-        return nameValidator(this.state.name) && nameValidator(this.state.name);
+        return nameValidator(this.state.name) && emailValidator(this.state.email);
     }
 
     validate() {
@@ -79,20 +81,28 @@ export default class Item extends Component {
                     <p className="b-form__error-message">Email should be valid</p>
                 </div>
 
-                {this.props.id &&
-                    <button className="b-button b-button_remove" onClick={this.handleRemove}>Remove</button>
-                }
+                <div className="b-buttons">
+                    <div className="b-buttons__left">
+                        <Link to="/" className="b-button">Cancel</Link>
+                    </div>
 
-                <button className="b-button" onClick={this.handleSubmit}>Save</button>
+                    <div className="b-buttons__right">
+                        {this.props.id &&
+                            <button className="b-button b-button_remove" onClick={this.handleRemove}>Remove</button>
+                        }
+
+                        <button className="b-button" onClick={this.handleSubmit}>Save</button>
+                    </div>
+                </div>
             </section>
         </Page>;
     }
 }
 
 Item.propTypes = {
-    id: PropTypes.number,
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    email: PropTypes.string,
     onSave: PropTypes.func.isRequired,
     onRemove: PropTypes.func,
 }

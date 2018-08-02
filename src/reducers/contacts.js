@@ -3,21 +3,20 @@ export default function (state = [], action) {
     switch (action.type) {
         
         case 'ADD_CONTACT':
-            const id = (state.length ? Math.max.apply(
-                Math, state.map(i=> i.id)) : 0
-            ) + 1;
-
             return [...state, {
                 name: action.name,
                 email: action.email,
-                id,
+                key: action.key,
             }];
 
         case 'REMOVE_CONTACT':
-            return state.filter(item => item.id !== action.id);
+            return state.filter(item => item.key !== action.key);
+
+        case 'RESET_CONTACTS':
+            return [...action.list];
 
         case 'UPDATE_CONTACT':
-            return state.map(item => item.id === action.id ? {
+            return state.map(item => item.key === action.key ? {
                 ...item,
                 name: action.name,
                 email: action.email,

@@ -41,6 +41,9 @@
     border: 1px solid #f1f1f1;
     background: #f1f1f1;
     cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .b-button ~ .b-button {
@@ -138,4 +141,19 @@
     padding: 10px 25px;
     width: 100%;
     box-sizing: border-box;
+}
+
+.b-buttons:after {
+    content: '';
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.b-buttons__left {
+    float: left;
+}
+
+.b-buttons__right {
+    float: right;
 }
